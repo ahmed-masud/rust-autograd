@@ -62,6 +62,7 @@ impl<'a, 'b, F: Float> Graph<F> {
     // Removes all tensors (nodes) in this graph.
     //
     // Be careful not to remove tensors that will be needed later.
+    #[warn(dead_code)]
     fn clear(&mut self) {
         unsafe {
             (&mut *self.node_set.get()).clear();
